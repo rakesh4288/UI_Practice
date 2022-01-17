@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Slice Vs Splice</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">What is the difference slice & Splice ?</h3>
+            </div>
+            <div class="panel-body">
+              <h4>Slice:</h4>
+              
+              <ul>
+                <li>Slice method is always returning new Array Because Array.slice() does not change the original array.</li>
+                <li>You need to provide the starting and ending index of array then it will select that come up with the new array.</li>
+              </ul>
+			  
+			        <p class="text-danger">The slice() method returns the selected elements in an array, as a new array object. This is a Syntax: array.slice(start, end)</p>
+
+              <hr>
+              <h4>Splice:</h4>
+              <ul>
+                <li>Splice method is also using for slicing your array values Splice method is not returning new Array its producing new value in an Existing array. It does not generate a new array</li>
+                <li>If you want to add or delete array values within Existing array without using pop(), push(). shift(), unshift() so you can perform the Splice method for solving your problems </li>
+                <li class="text-danger">Syntax: splice(index, how many delete, add new value);</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+     // Slice
+     let a = ["Amlori","Majan","Kachani","Khutar","Raj Milaan","Mada"];
+     console.log("Existing Array Without slice: ", a);
+     let b = a.slice(1,4);
+     console.log("After Slice =", b);
+
+
+      let c = ["Amlori","Majan","Kachani","Khutar","Raj Milaan","Mada"];
+      c.splice(3,1,"Banauli","Bhandi");
+      console.log("After Splice Function =", c);
+    </script>
+  </body>
+</html>

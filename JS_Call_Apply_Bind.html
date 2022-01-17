@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Call Apply Bind</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2> Call, Apply and Bind </h2>
+          <p>In this post, we will discuss about the difference between <code>call()</code>, <code>apply()</code>, and <code>bind()</code> methods of JavaScript functions with simple examples.</p>
+          <h2 id="uses"><a class="header-anchor" href="#uses" aria-hidden="true"><i class="fa fa-link" aria-hidden="true"></i></a> Uses</h2>
+          <p>You can use <code>call()</code>/<code>apply()</code> to invoke the function immediately. <code>bind()</code> returns a bound function that, when executed later, will have the correct context (<strong>"this"</strong>) for calling the original function. So <code>bind()</code> can be used when the function needs to be called later in certain events when it's useful.</p>
+          <h2 id="call-or-functionprototypecall"><a class="header-anchor" href="#call-or-functionprototypecall" aria-hidden="true"><i class="fa fa-link" aria-hidden="true"></i></a> <code>call()</code> or <code>Function.prototype.call()</code></h2>
+          <h4 class="alert alert-info"> By using call() method you can pass object with parameter</h4> <pre><code class="hljs javascript"><span class="hljs-comment">//Demo with javascript .call()</span>
+    
+    <span class="hljs-keyword">var</span> obj = {<span class="hljs-attr">name</span>:<span class="hljs-string">"Niladri"</span>};
+    
+    <span class="hljs-keyword">var</span> greeting = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,b,c</span>)</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"welcome "</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">" to "</span>+a+<span class="hljs-string">" "</span>+b+<span class="hljs-string">" in "</span>+c;
+    };
+    
+    <span class="hljs-built_in">console</span>.log(greeting.call(obj,<span class="hljs-string">"Newtown"</span>,<span class="hljs-string">"KOLKATA"</span>,<span class="hljs-string">"WB"</span>));
+    <span class="hljs-comment">// returns output as welcome Niladri to Newtown KOLKATA in WB</span>
+    </code></pre>
+
+
+          <hr> <hr>
+
+
+          <h2 id="apply-or-functionprototypeapply"><a class="header-anchor" href="#apply-or-functionprototypeapply" aria-hidden="true"><i class="fa fa-link" aria-hidden="true"></i></a> <code>apply()</code> or <code>Function.prototype.apply()</code></h2>
+          <h4 class="alert alert-info"> By using apply() method you can pass object with parameter as an array format</h4> <pre><code class="hljs javascript"><span class="hljs-comment">//Demo with javascript .apply()</span>
+    
+    <span class="hljs-keyword">var</span> obj = {<span class="hljs-attr">name</span>:<span class="hljs-string">"Niladri"</span>};
+    
+    <span class="hljs-keyword">var</span> greeting = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,b,c</span>)</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"welcome "</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">" to "</span>+a+<span class="hljs-string">" "</span>+b+<span class="hljs-string">" in "</span>+c;
+    };
+    
+    <span class="hljs-comment">// array of arguments to the actual function</span>
+    <span class="hljs-keyword">var</span> args = [<span class="hljs-string">"Newtown"</span>,<span class="hljs-string">"KOLKATA"</span>,<span class="hljs-string">"WB"</span>];  
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Output using .apply() below "</span>)
+    <span class="hljs-built_in">console</span>.log(greeting.apply(obj,args));
+    
+    <span class="hljs-comment">/* The output will be 
+      Output using .apply() below
+     welcome Niladri to Newtown KOLKATA in WB */</span>
+    </code></pre>
+          <h3 class="alert alert-danger"> The only difference of apply() with the call() method is that - the second parameter of the apply() method accepts the arguments to the actual function as an array.</h3>
+
+
+          <hr> <hr>
+
+          <h2 id="bind-or-functionprototypebind"><a class="header-anchor" href="#bind-or-functionprototypebind" aria-hidden="true"><i class="fa fa-link" aria-hidden="true"></i></a> <code>bind()</code> or <code>Function.prototype.bind()</code></h2>
+          <p> <code>bind()</code> we are returning a bound function with the context which will be invoked later. We can see the bound function in the console as below .</p> <pre><code class="hljs javascript">
+    
+    <span class="hljs-keyword">var</span> obj = {<span class="hljs-attr">name</span>:<span class="hljs-string">"Niladri"</span>};
+    
+    <span class="hljs-keyword">var</span> greeting = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,b,c</span>)</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"welcome "</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">" to "</span>+a+<span class="hljs-string">" "</span>+b+<span class="hljs-string">" in "</span>+c;
+    };
+    
+    <span class="hljs-comment">//creates a bound function that has same body and parameters </span>
+    <span class="hljs-keyword">var</span> bound = greeting.bind(obj); 
+    
+    <span class="hljs-built_in">console</span>.dir(bound); <span class="hljs-comment">///returns a function</span>
+    
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Output using .bind() below "</span>);
+    
+    <span class="hljs-built_in">console</span>.log(bound(<span class="hljs-string">"Newtown"</span>,<span class="hljs-string">"KOLKATA"</span>,<span class="hljs-string">"WB"</span>)); <span class="hljs-comment">//call the bound function</span>
+    
+    <span class="hljs-comment">/* the output will be 
+    Output using .bind() below
+    welcome Niladri to Newtown KOLKATA in WB */</span>
+    </code></pre> </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      var person = {
+        name: "Rakesh",
+        city: "Pune"
+      }
+      // Call Method
+      function callMethod(a){
+        return console.log(a + this.name + " " + this.city);
+      }
+
+      callMethod.call(person,"Hello Mr. ");
+      function greeting(a,b,c){
+        return a + this.name + " " + b + " " + c;
+      }
+      console.log(greeting.call(person,"Hello Mr. ", "How are","you !"));
+
+      /***********************************************************/
+      // Apply Method
+      function applyMethod(a,b,c){
+        return console.log(a + this.name + " " + b + c);
+      }
+      applyMethod.apply(person,["Hello Mr.", "How do ", "you do !"]);
+
+      /***********************************************************/
+      
+      // Bind Method
+      var bound = callMethod.bind(person,"Hello Mr. ");
+      bound();
+    </script>
+  </body>
+</html>

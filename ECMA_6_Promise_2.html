@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Promises</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-danger">
+            <h1>Promises in JavaScript</h1>
+            <h5>When we have to perform some set of action in JavaScript. It may be some calculation or some set of code or modules that would be execute in some time.</h5>
+            <h5 class="text-success">So in this scenario we can use the JavaScript Promises. Because it will definitely execute and provide two state: Either it will come up with the Resolve Success method or oit maby chance to get Failed</h5>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <p>
+                  <img src="images/promise_1.png" class="img-fluid" alt="">
+                </p>
+              </div>
+
+              <div class="col-md-8">
+                <h6>When we will the status of Promises so we can handle this situation by then() and catch()block</h6>
+                <h6 class="text-danger"><b>then():</b> When you will receive the success from Promise execution then you can handle into then() block and you can call some another function to execute</h6>
+
+                <h6 class="text-danger"><b>catch():</b> similarly this will also follow for reject status after promise exection.</h6>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <img src="images/promise_2.png" class="img-fluid" alt="">
+                </p>
+              </div>
+
+              <div class="col-md-6">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Example 1
+      let complete = true;
+      let Promise_1 = new Promise(function(resolve,reject){
+        if(complete){
+          resolve("Success");
+        } else {
+          reject("Failed");
+        }
+      });
+
+      console.log(Promise_1);
+      
+      /*************************************************/
+      // Example 2: Using Function
+      // When we create a Promise inside the function one thing need to keep in mind is that it will always return 
+
+      function Promise_2(status){
+        return new Promise(function(resolve,reject){
+          if(status){
+            resolve("Promise Passed");
+          } else {
+            rejct("Promise Failed");
+          }
+        });
+      }
+
+      console.log(Promise_2(true));
+
+      /*************************************************/
+      // Example 3: Using Callback function .then() & .catch()
+
+      function Promise_3(status){
+        return new Promise(function(resolve,reject){
+          if(status){
+            resolve("Status of Promise is Success");
+          } else {
+            reject("Status of Promise is Failed");
+          }
+        });
+      }
+
+      // Using Traditional Function
+      // function passed(result){
+      //   console.log(result);
+      // }
+
+      // function failed(error){
+      //   console.log(error);
+      // }
+      
+      // Now with Arrow Function
+      let passed = (result)=>{
+        console.log(result);
+      }
+
+      let failed = (error)=>{
+        console.log(error);
+      }
+      
+      //console.log(Promise_3(true));
+      Promise_3(false).then(passed).catch(failed); // Here we are passing the callback function then()
+
+      /*************************************************/
+      // Example 4: Using setTimeout
+
+      function Promise_4(status){
+        return new Promise(function(resolve,reject){
+          console.log("Please wait we are trying to get result...");
+          setTimeout(function(){
+            if(status){
+            resolve("Interview Result = Great You Passed");
+          } else {
+            reject("Interview Result = Sorry you Failed");
+          }
+          },3000);
+        });
+      }
+
+      let interviewPassed = (result)=>{
+        console.log(result);
+      }
+
+      function interviewFailed(error){
+        console.log(error);
+      }
+
+      Promise_4(true).then(interviewPassed).catch(interviewFailed);
+      //Promise_4(false).catch(interviewFailed);
+
+    </script>
+  </body>
+</html>

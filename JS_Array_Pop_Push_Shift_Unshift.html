@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript Pop Push Unshift Shift</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">JavaScript Pop Push Unshift Shift</h3>
+            </div>
+            <div class="panel-body">
+
+              <p>
+                <ul>
+                  <li>By using push() method: it will append your value in last index of array</li>
+                  <li>pop() : It will remove the value from last index of array</li>
+                  <li>unshift(): This will append your value from first index of your array</li>
+                  <li>shift(): This will remove the  value from first index of your array</li>
+                </ul> 
+              </p>
+
+              <h4>Push</h4>
+              <p>
+                The push() method adds one or more elements to the end of an array and returns array and returns the new length of the array.
+              </p>
+              <p> <img src="images/JS_Push.png" class="img-responsive" alt=""> </p>
+
+              <hr>
+
+              <h4>Pop</h4>
+              <p>
+                The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+              </p>
+              <p> <img src="images/JS_Pop.png" class="img-responsive" alt=""> </p>
+
+              <hr>
+
+              <h4>Shift</h4>
+              <p>
+                The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
+              </p>
+
+              <p> <img src="images/JS_Shift.png" class="img-responsive" alt=""> </p>
+
+              <hr>
+
+              <h4>Unshift</h4>
+              <p>
+                The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+              </p>
+              <p> <img src="images/JS_Unshift.png" class="img-responsive" alt=""> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      var myArray = ["a","b","c"];
+      myArray.push("start");
+      console.log(myArray);
+      //myArray.pop();
+      //console.log(myArray);
+      
+      myArray.unshift("End");
+      console.log(myArray);
+      //myArray.shift();
+      //console.log(myArray);
+
+      // How do you create a private variable in JavaScript
+		
+      function inner(){
+        var privateVar = "Super Secret Variable";
+        return function(){
+          return privateVar;
+        }
+      }
+      
+      var outer = inner();
+      console.log(outer);
+      console.log(outer());
+
+      ///////////////////////////////////////////////
+      console.log("one");
+      setTimeout(function(){
+        console.log("Two");
+      },1000);
+      console.log("three");
+    </script>
+  </body>
+</html>

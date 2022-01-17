@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tricky JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      console.log(Number("1")-1 == 0);
+      console.log((true + false) > 2 + true);
+      var xx = new String("Rajvika");
+      console.log("String = ", xx); // this will separate the string value;
+      console.log("String Separation = ", xx[4]); // By using [] array indexing we can fetch the value of each index.
+      var xxx = new String("This is String") instanceof String;
+      console.log("instanceof String = ", xxx);
+
+      console.log(String("Hello") === "Hello");
+      var dd = new Array(5).toString();
+		  console.log("Array =", dd);
+
+      /***************************************************/
+
+      var myArr = ['LTI','Infy','TCS'];
+			myArr.length = 0;
+			console.log("My Array Length =", myArr.length);
+			myArr.push("CTS");
+			console.log("My Array Length =", myArr.length);
+
+      var pp = 10>9>8 === true;
+		  console.log("10>9>8 === true ",pp);
+
+      var wwe = "This is String" instanceof String;
+		  console.log("WWE = ", wwe);
+
+      /***************************************************/
+
+      var tata = ["Singrauli","Rewa","Jabalpur"];
+      tata[2];
+      console.log('2' in tata);
+
+      var array_2 = [];
+      array_2[0] = 'a';
+      array_2[1] = 'b';
+      array_2.goga = 'c';
+      console.log("Array_2 Length = ",array_2.length);
+
+      function hello(a,b){
+			arguments[1] = 5;
+			console.log('Hello arguments = ', b,a);
+		}
+		hello(2,1);
+
+    /***************************************************/
+    console.log("NaN === NaN", NaN === NaN);
+    console.log("NaN == NaN", NaN == NaN);
+
+    console.log("true === true", true === true);
+    console.log("true == true", true == true);
+
+    console.log("false === false", false === false);
+    console.log("false == false", false == false);
+    /***************************************************/
+
+    console.log(1+2+"3"+4+5);
+    console.log(1+2+"3"+4-5);
+
+    var obj = {
+      a:{
+        b:"Hello",
+        c:[1,2,3]
+      },
+      d:[4,5,6],
+      e:true
+    }
+    let obj_itr = Object.entries(obj);
+    //console.log(obj_itr);
+    for(o of obj_itr){
+      console.log("Property =", o[0] + " Values = " + o[1] + " Type = " + typeof(o[1]));
+      //console.log(" toString = " + typeof(Object.keys(o[1]).toString()));
+      //console.log(" Object.prototype = ", Object.prototype.toString.call(o[1]));
+      var abc = Object.prototype.toString.call(o[1]);
+      if(abc === '[object Object]'){
+        //console.log('typeof(o[1]) =', typeof(o[1]));
+        for(ob of abc){
+          //console.log("...Property =", ob[0] + " Values = " + ob[1] + " Type = " + typeof(ob[1]));
+        }
+      }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript Hoisting</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">What is JavaScript Hoisting?</h3>
+            </div>
+            <div class="panel-body">
+              ANS: JavaScript hoisting is the default behavior of moving the declaration on the top. <br>
+            <p>
+              In a JavaScript – We can use any variable and later we can declare. In the other words you can say that variable can be used before it has been declared.
+            </p>
+
+            <p class="text-danger">Note: Function expression cannot be hoisted, only traditional function can be hoisted.
+            </p>
+
+            <p class="text-danger">Note:  Let & Var keyword also cannot be hoisted. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      abc();
+      yy = "Yes";
+      console.log("Before declaration of variable =", yy);
+      var yy;
+
+      function abc(){
+        xyz = "Yes";
+        console.log("from function also =", xyz);
+        var xyz;
+      }
+
+
+    //desire(); // this function can not be executable Because its Function Expression
+
+      var desire = function(){
+        wwe = "Triple H";
+        console.log("From Function Expression = ", wwe);
+      }
+      desire();
+
+      // tata(); -- TypeError: tata is not a function
+      var tata = function(){
+        console.log("TATA is big Giant Orginzation !!");
+      }
+
+      tata();
+      
+      /**************************************/
+      var sam = 1;
+      function sample_1(){
+        console.log(sam);
+        sam = 2;
+      }
+      sample_1();
+
+
+      var tt = 100;
+      function task(){
+        console.log("task =",tt);
+       var tt = 100;
+      }
+      task();
+    </script>
+  </body>
+</html>

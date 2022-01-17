@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>What is Web Storage in HTML5?</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is Web Storage in HTML5?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                With web storage, web applications can store data locally within the user's browser. 
+              </p>
+              <p>
+                Before HTML5, application data had to be stored in cookies, included in every server request. Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+              </p>
+
+              <p>
+                HTML5 web storage provides two objects for storing data on the client:
+                <ul>
+                  <li><b>window.localStorage</b>: stores data with no expiry date</li>
+                  <li><b>window.sessionStorage </b>: stores data for one session (data will be lost when browser is closed)</li>
+                </ul>
+              </p>
+
+              <hr>
+
+              <h4>Local Storage:</h4>
+              <p>The localStorage object stores the data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.</p>
+              <p>
+                <img src="images/local_storage.png" alt="">
+              </p>
+
+              <h4>Session Storage:</h4>
+              <p>The sessionStorage object is equal to the localStorage object, except that it stores the data for only one session. The data is deleted when the user closes the specific browser tab.</p>
+              <p>
+                <img src="images/session_storage.png" alt="">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      
+    </script>
+  </body>
+</html>

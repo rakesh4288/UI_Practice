@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      .hidden{
+        display: block;
+        background-color: red;
+        width: 200px;
+        height: 100px;
+      }
+
+      .none{
+        display: block;
+        background-color: green;
+        width: 200px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h1>Visibility:Hidden</h1>
+            <h4>This CSS will hide only the content and the height will be remain same as it is.</h4>
+            
+            <hr>
+
+            <h1>Display:none</h1>
+            <h4>By using this Property it will hide the element left the element area.</h4>
+
+            <br><br>
+            <div class="hidden">
+              Visibility:Hidden Box
+            </div>
+
+            <div class="none">
+              Display None Box
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

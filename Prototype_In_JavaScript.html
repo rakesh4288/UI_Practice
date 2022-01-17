@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prototype_In_JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2>JavaScript Object Prototypes</h2>
+            <p>
+              JavaScript is a prototype based language so, actually whenever we create a function using JavaScript, JavaScript engine adds a prototype property inside a function, Prototype property is basically an object (also known as Prototype object), where we are attaching methods and properties in a prototype object so this enables all the other objects to inherit these methods and properties.
+            </p>
+
+            <h6>Consider the example below:-</h6>
+            <p>There are different ways to create an object, one of the way is to create an object using function constructor.</p>
+            <div> <img src="images/prototype_1.png" alt=""> </div>
+            <p>See console here</p>
+            <div> <img src="images/prototype_2.png" alt=""> </div>
+            <div> <img src="images/prototype_3.png" alt="" class="img-fluid"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // function construction
+      function Person(name,address,phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+      }
+      // this will show the Person's property
+      console.log(Person.prototype);
+
+      /************************************************************/
+      var array_1 = [76,65,4,5,7896,5,3,355];
+      var maxValue = 0;
+      for (var i=0; i<=array_1.length; i++){
+        if(maxValue<=array_1[i]){
+          maxValue = array_1[i];
+        }
+      }
+
+      console.log("Maximum Value from Array =", maxValue);
+
+      /************************************************************/
+      var array_2 = [65,89,6,1,5,34,2,4,56];
+      var minValue = array_2[0];
+      for(var i=0; i<=array_2.length; i++){
+        if(minValue>=array_2[i]){
+          minValue = array_2[i]
+        }
+      }
+      console.log("Minimum Value from Array =", minValue);
+
+    </script>
+  </body>
+</html>

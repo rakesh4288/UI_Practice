@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      var person = {
+      firstName: "John",
+      lastName : "Doe",
+      id     : 5566,
+      fullName : function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+
+    console.log(person.fullName()); // it will print the full name
+    console.log(person.fullName); // This will print the function body
+
+    /********************************************/
+    // How to iterate the Object and how to find their type also
+    var rakaObject = {
+      name:"Rakesh",
+      age: 33,
+      city:"Pune",
+      mob:9762462383,
+      marriage:true,
+      child: ["Rajvika","Riyansh"],
+      country: "India"
+    }
+
+    var beti = Object.entries(rakaObject);
+    for(raj of beti){
+      //console.log(raj[0],raj[1]);
+      //console.log(typeof(raj[0]));
+      console.log("Property = " + raj[0] + " Values = " + raj[1] + " Type Of = " + typeof(raj[1]));
+    }
+
+    console.log("*****************************");
+    for(let [key,value] of beti){
+      console.log(`${key}: ${value}`);
+    }
+    </script>
+  </body>
+</html>

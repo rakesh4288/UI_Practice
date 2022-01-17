@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JavaScript CRUD Example Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        label.validation-error{
+        color:   red;
+        margin-left: 5px;
+        }
+
+        .hide{
+        display:none;
+        }
+    </style>
+</head>
+
+<body>
+<br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="alert alert-primary">
+          <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+              <div class="form-group">
+                  <label>Contact Name</label>
+                  <input type="text" class="form-control" name="fullName" id="fullName">
+                  <label class="validation-error hide" id="fullNameValidationError">
+                    This field is required.</label>
+              </div>
+  
+              <div class="form-group">
+                  <label>Mobile No</label>
+                  <input type="number" maxlength="10" class="form-control" name="mobile" id="mobile">
+                  <label class="validation-error hide" id="mobileError">This field is required.</label>
+              </div>
+  
+              <div class="form-group">
+                <label>Email Id</label>
+                <input type="email" class="form-control" name="email" id="email">
+                <label class="validation-error hide" id="emailError">This field is required.</label>
+            </div>
+  
+              <div class="form-group">
+                  <input type="submit" class="btn btn-success" value="Add New Contact">
+              </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group">
+              <input type="search" class="light-table-filter form-control" data-table="table-info" placeholder="Search By Mobile No">
+            </div>
+  
+            <table class="table table-info" id="employeeList">
+              <thead>
+                  <tr>
+                      <th>Full Name</th>
+                      <th>Mobile No</th>
+                      <th>Email Id</th> 
+                  </tr>
+              </thead>
+              <tbody>
+  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <table id="summaryTable">
+	<thead>
+	  <tr>
+		<th id="nameColumn">Name</th>
+		<th>Mobile</th> 
+		<th>Email</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td>Admin</td>
+		<td>9999999999</td> 
+		<td>admin@xyzcompany.com</td>
+	  </tr>
+	</tbody>
+  </table>
+
+  <script>
+      
+ var selectedRow = null
+
+function onFormSubmit() {
+	if(validate()) {
+		var formData = readFormData();
+		if(selectedRow == null) insertNewRecord(formData);
+		else updateRecord(formData);
+		resetForm();
+	}
+}
+
+function readFormData() {
+	var formData = {};
+	formData["fullName"] = document.getElementById("fullName").value;
+	formData["mobile"] = document.getElementById("mobile").value;
+	formData["email"] = document.getElementById("email").value;
+	return formData;
+}
+
+function insertNewRecord(data) {
+	var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+	var newRow = table.insertRow(table.length);
+	cell1 = newRow.insertCell(0);
+	cell1.innerHTML = data.fullName;
+	cell2 = newRow.insertCell(1);
+	cell2.innerHTML = data.mobile;
+	cell3 = newRow.insertCell(2);
+	cell3.innerHTML = data.email;
+}
+
+function resetForm() {
+	document.getElementById("fullName").value = "";
+	document.getElementById("mobile").value = "";
+	document.getElementById("email").value = "";
+	selectedRow = null;
+}
+
+function validate() {
+	isValid = true;
+	if(document.getElementById("fullName").value == "") {
+		isValid = false;
+		document.getElementById("fullNameValidationError").classList.remove("hide");
+	} else {
+		isValid = true;
+		if(!document.getElementById("fullNameValidationError").classList.contains("hide")) 
+    document.getElementById("fullNameValidationError").classList.add("hide");
+	}
+
+  if(document.getElementById("mobile").value == "") {
+		isValid = false;
+		document.getElementById("mobileError").classList.remove("hide");
+	} else {
+		isValid = true;
+		if(!document.getElementById("mobileError").classList.contains("hide")) 
+    document.getElementById("mobileError").classList.add("hide");
+	}
+
+  if(document.getElementById("email").value == "") {
+		isValid = false;
+		document.getElementById("emailError").classList.remove("hide");
+	} else {
+		isValid = true;
+		if(!document.getElementById("emailError").classList.contains("hide")) 
+    document.getElementById("emailError").classList.add("hide");
+	}
+	return isValid;
+}
+
+  (function(document) {
+	'use strict';
+	var TableFilter = (function(Arr) {
+		var _input;
+
+		function _onInputEvent(e) {
+			_input = e.target;
+			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+			Arr.forEach.call(tables, function(table) {
+				Arr.forEach.call(table.tBodies, function(tbody) {
+					Arr.forEach.call(tbody.rows, _filter);
+				});
+			});
+		}
+
+		function _filter(row) {
+			var text = row.textContent.toLowerCase(),
+				val = _input.value.toLowerCase();
+			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+		}
+		return {
+			init: function() {
+				var inputs = document.getElementsByClassName('light-table-filter');
+				Arr.forEach.call(inputs, function(input) {
+					input.oninput = _onInputEvent;
+				});
+			}
+		};
+	})(Array.prototype);
+	document.addEventListener('readystatechange', function() {
+		if(document.readyState === 'complete') {
+			TableFilter.init();
+		}
+	});
+})(document);
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <p>The two object can not be compared whether all properties and value are the same.</p>
+			
+			      <p><i>this</i> refers to the current context into JavaScript</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+    console.log([] + []); // NO any result Because both array are empty
+	  console.log([1] + [2+"2"]); // 122
+	  console.log([1] + [3]); // 13
+	  console.log({} + {}); // result: [object Object][object Object]
+	 
+	 /**********************************************/
+
+	 function a(){
+		return "Hello"
+	 }
+	 
+	 var sentence = a('Hi');
+	 console.log("Setence = ", sentence);
+
+   /**********************************************/
+   
+   x = 5;
+   var x;
+   function xyz(){
+    console.log("inside of X = ", x);
+    console.log("Y = ", y);
+    y = 10;
+    var y;
+    console.log("Y = ", y);
+   }
+
+   xyz();
+   console.log("X = ", x);
+
+   /**********************************************/
+   
+   console.log("55 == '55'", 55 == "55");
+   console.log("55 === '55'", 55 === "55");
+   
+   /**********************************************/
+
+   //const bb; // bb has assigned with Undefined value;
+   //bb = "Indore"; // So we can not re-assign the value
+
+  /**********************************************/
+  Bhopal();
+  function Bhopal(){
+    console.log("Bhopal");
+  }
+  Bhopal();
+
+  singrauli();
+  let singrauli = function(){
+    console.log("singrauli");
+  }
+
+  indore();
+  
+  var foo = function(){
+    console.log("foo === foo ", foo === foo);
+  }
+  foo();
+
+  /**********************************************/
+  function jojo(){
+    return {
+      test:1,
+      name: "Rakesh",
+      lastName: "Shah"
+    }
+  }
+
+  jojo();
+  //console.log("jojo=", typeof(jojo)); // This will print the Function name only
+  //console.log("jojo()=", typeof(jojo())); // This will print the object inside function we have object which is returning
+  /**********************************************/
+
+   
+    </script>
+  </body>
+</html>

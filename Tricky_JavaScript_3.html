@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+    function test(){
+      console.log("The Value of X ",x);
+      var x = 5;
+    }
+    test();
+
+    for(var i=1; i<5;i++){
+      setTimeout(function(){
+        console.log(i);
+      },1000);
+    }
+
+    // setInterval(function(){
+    //   for(var i = 1; i<=2; i++){
+    //     console.log(i);
+    //   }
+    // },1000);
+
+    for (var i = 0; i < 5; i++) {
+      (function (i) {
+        setTimeout(function () {
+          console.log(i);
+        }, 3000*i);
+      })(i);
+    };
+
+    /**************************************/
+
+    function abc(a,b){
+      console.log("Result = " + a + b);
+      console.log("result = ", a + b);
+    }
+    abc(5,6);
+
+  /**************************************/
+  const WWF = ["Undertaker","Triple H"];
+  // WWF = ["Undertaker","Triple H","ROCK"]; 
+  // console.log("WWE = ", WWF);
+  // We can not reassign the this array value since this is created by using const keyword
+  
+  // So we can perform all Array manipulation properties//
+  WWF.push("HBK");
+  console.log("WWE = ", WWF);
+  WWF.pop();
+  console.log("WWE = ", WWF);
+  WWF.shift();
+  console.log("WWE = ", WWF);
+  WWF.unshift("Edge");
+  console.log("WWE = ", WWF);
+
+
+  let country = "India";
+  let country = "Hongkong";
+  country = "Spain";
+  console.log("country = ", country);
+
+  let country = "India";
+  country = "Hongkong";
+  console.log("country = ", country);
+  </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Geo Location</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is HTML5 Geo Location API ?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                GEO location is the API of HTML5 which is used to get geo location data directly without using any third-party library. 
+              </p>
+              <h4 class="text-danger">The getCurrentPosition() Method - Return Data</h4>
+              <h5>
+                The getCurrentPosition() method returns an object on success. The latitude, longitude and accuracy properties are always returned. The other properties are returned if available:
+              </h5>
+
+              <button class="btn btn-success" onclick="getGeolocation()">Get Geo Location</button>
+              <br>
+              <p id="showGeoData"></p>
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th style="width:150px">Property</th>
+                    <th>Returns</th>
+                  </tr>
+                  <tr>
+                    <td>coords.latitude</td>
+                    <td>The latitude as a decimal number (always returned)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.longitude</td>
+                    <td>The longitude as a decimal number (always returned)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.accuracy</td>
+                    <td>The accuracy of position (always returned)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.altitude</td>
+                    <td>The altitude in meters above the mean sea level (returned if available)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.altitudeAccuracy</td>
+                    <td>The altitude accuracy of position (returned if available)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.heading</td>
+                    <td>The heading as degrees clockwise from North (returned if available)</td>
+                  </tr>
+                  <tr>
+                    <td>coords.speed</td>
+                    <td>The speed in meters per second (returned if available)</td>
+                  </tr>
+                  <tr>
+                    <td>timestamp</td>
+                    <td>The date/time of the response (returned if available)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      var getGeoValues = document.getElementById("showGeoData");
+      function getGeolocation(){
+        console.log("inside getGeolocation function");
+        if(navigator.geolocation){
+          console.log("Yes Supporting Geo Location");
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          console.log("Not Supporting");
+        }
+      }
+
+      function showPosition(position){
+        getGeoValues.innerHTML = "Latitude =" + position.coords.latitude + "<br>Longitude = " + position.coords.longitude;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mixin in SASS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2> <u>Mixin in SASS</u> </h2>
+            <h5 class="text-success">In CSS development we are writing a some similar code multiple times like headings paragraphs image responsive code so for reducing this effort we can use Mixin functionlity from SASS. This is one kind of CSS function and this will be define only one time and you can call multiple times. </h5>
+
+            <h5> <p>Remember how we wrote <code class="highlighter-rouge">@keyframes</code> when creating <strong><a href="https://marksheet.io/css-animations.html" target="_blank">CSS animations</a></strong>? The Sass mixin syntax is fairly similar:</p> </h5>
+
+            <div> <img src="images/mixin_1.png" class="img-fluid" /> </div>
+            <div> <img src="images/mixin_2.png" class="img-fluid" /> </div>
+            <div> <img src="images/mixin_3.png" class="img-fluid" /> </div>
+
+            <hr>
+            <h3>Reusability</h3>
+            <h5>The main purpose of creating Mixin is to => Reuse the same code whenever you need. It can reduce the development efforts and code quality can be improve.</h5>
+            <h5>Like Sass variables (where you define your values on a single location), Sass mixins allow you to define properties on a single location.</h5>
+            <div> <img src="images/mixin_4.png" class="img-fluid" /> </div>
+            <div> <img src="images/mixin_5.png" class="img-fluid" /> </div>
+
+            <hr>
+
+            <h3>Parameters:</h3>
+            <h5>Because mixins are functions and because you might want to alter the output, mixins can accept parameters.</h5>
+
+            <div> <img src="images/mixin_6.png" class="img-fluid" /> </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <h2 class="text-danger"> 
+        function expression can not be hoisted which is created by Let & Var keyword !!
+      </h2>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function outer(){
+        var outer_variable = "I am outer variable";
+        if(true){
+          let inside_if = "This variable belongs to curly brasis";
+          console.log("inside from If = " + inside_if);
+        }
+        console.log(outer_variable);
+        //console.log(inside_if);
+		  }
+		
+		  outer();
+
+      //desing(); // this will produce the error Because function expression can not be Hoisted which is created by Let & var keyboard
+      var desing = function(){
+        console.log("function expression can not be hoisted which is created by Let & Var keyword !!");
+      }
+    </script>
+  </body>
+</html>

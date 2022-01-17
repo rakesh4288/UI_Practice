@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Class</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <img src="images/class_2.png" class="img-fluid" alt="">
+              </p>
+            </div>
+
+            <div class="col-md-6">
+              <div class="alert alert-info">
+                <h4>Properties:</h4>
+                <p>We can have the variables of the class.</p>
+
+                <h4>Methods:</h4>
+                <p>All the function inside the class is called methods. We can add multiple function inside the class </p>
+                <p class="text-danger">Note: function keyword is not allowed inside class</p>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>We have three methods for the class</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <img src="images/class_1.png" class="img-fluid" alt="">
+              </p>
+            </div>
+
+            <div class="col-md-6">
+              <div class="alert alert-warning">
+                <h3>Constructor Method:</h3>
+                <p>This is the default method of class and this is executing by default while initiating the class</p>
+  
+                <hr>
+                <h3>Prototype Method:</h3>
+                <p>
+                  When we are creating the function inside the class it becomes the Prototype method in class
+                </p>
+                
+                <hr>
+                <h3>Static Method:</h3>
+                <p>Static can not be called after constructor. I mean you can not call while object passing using new keyword.</p>
+                <p>you will get an error : <span class="text-danger">staticMethod is not a function</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      class hello{
+        welcome(a){
+          //console.log("Hello Everyone by", a);
+          console.log(`Hello ${a}`);
+        }
+
+        sorry(bb){
+          console.log(`Sorry ${bb}`);
+        }
+      }
+
+     let a = new hello(); // we are creating the object 
+     a.welcome("Rakesh");
+     a.sorry("Lalita");
+
+     /*************************************************/
+
+     class student{
+       constructor(){
+         let stdName;
+         let subject;
+         //console.log("I am a student");
+       }
+       studentName(){
+        //console.log('My name is ' + this.stdName + ' and i am student of ' + this.subject);
+        console.log(`My name is  ${this.stdName} and i am student of ${this.subject}`);
+       }
+     }
+      let BSSS = new student();
+      BSSS.stdName = "Rakesh Shah";
+      BSSS.subject = "Computer Science (BCA)";
+      BSSS.studentName();
+
+      /*************************************************/
+      // Now we will pass the object using new keyword and assigned into constructor
+      // If you want to set the class property then you need to use new keyword and passed the object value inside ()
+      class stream{
+        constructor(streamName,year){
+          this.course = streamName;
+          this.courseTime = year;
+        }
+
+        getCourse(){
+          console.log(`Course Name is ${this.course} and ${this.courseTime}`);
+        }
+
+        static staticMethod(){
+          let c1 = "BSSS";
+          let c2 = "Bhopal";
+          console.log('this is staticMethod');
+          //console.log("college name ", c1 + " " + c2);
+          // using Template string
+          console.log(`My College name is ${c1} and its located at ${c2}`);
+        }
+      }
+
+     let college = new stream("BCA","3 Years Full Time");
+     let LNCT = new stream("B.Tech","Complete 4 Years");
+     // Now call the getCourse Function
+     college.getCourse();
+     LNCT.getCourse();
+     // Static Method can be called in Class itself without object creation
+     stream.staticMethod();
+    </script>
+  </body>
+</html>

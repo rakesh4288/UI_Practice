@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <div class="entry-content">
+              
+              <div class="code-block code-block-19" style="margin: 8px 0; clear: both;">
+                <!-- modal popup -->
+                <style>
+                .inline-pp-banner {
+                  display: block;
+                  background: #faffbd;
+                  padding: 20px 15px;
+                  border: 1px solid #36a67b;
+                  border-radius: 3px;
+                }
+                
+                .inline-fc-mob {
+                  cursor: pointer;
+                  font-weight: bold
+                }
+                
+                @media only screen and (min-width: 768px) {
+                  .inline-pp-banner {
+                    display: none;
+                  }
+                }
+                </style>
+              </div>
+
+              <h3>Part 1 – UI Developer Interview Questions (Basic)</h3>
+              <p>This first part covers basic Interview Questions and Answers.</p>
+              <h4>Q1. What is Semantic HTML?</h4>
+              <p><strong>Answer:</strong>
+                <br> Semantic HTML is a coding style where the tags will contain how texts need to display on the user interface. Tags like bold, Italic should not be used along with semantic HTML as they represent formatting and doesn’t have any meaning or structure. The semantically correct thing is to use these tags to have the same effect as bold and italic, along with meaning and structure.</p>
+              <h4>Q2. How absolute, relative, a static and fixed position will differ?</h4>
+              <p><strong>Answer:</strong></p>
+              <p>This is the basic UI Developer Interview Question asked in an interview. Please find below the different tables that UI Developer supports are:
+                <br> <strong>Absolute:</strong> It will place the element exactly where a user wants to place it. In general absolute will place relative to the parent. If no parent is available, then it is placed relative to the page itself.</p>
+              <p><strong>Relative</strong>: It will place the element relative to itself (if we didn’t give any relative positioning); for example, if we set position relative to an element and given as top: 10px, then it will place the element 10px down from where the actual position of the element to be.</p>
+              <div class="code-block code-block-17" style="margin: 8px 0; clear: both;">
+                <style>
+                .othr-cour a {
+                  color: #4a4a4a!important;
+                  border-bottom: none
+                }
+                
+                .othr-cour a:hover {
+                  border-bottom: 1px solid!important
+                }
+                
+                .box-div .fa-book:before {
+                  content: "\f14e"
+                }
+                
+                .box-div .fa-book {
+                  background-image: linear-gradient(to top, #0ba360 0, #3cba92 100%);
+                  padding: 15px;
+                  border-radius: 5px;
+                  color: #f0f8ff;
+                  font-size: 50px
+                }
+                
+                .box-div .fa-flash:before,
+                .fa-bolt:before {
+                  content: "\f1fa"
+                }
+                
+                .box-div .box-btn {
+                  width: max-content;
+                  cursor: pointer;
+                  transition: all .2s ease;
+                  padding: 10px 30px;
+                  line-height: 1.33;
+                  border-radius: 4px;
+                  color: #fff;
+                  background: #ff8c00;
+                  border: thin solid #ff8c00;
+                  margin-bottom: 0;
+                  font-weight: 700;
+                  text-align: center;
+                  vertical-align: middle;
+                  font-size: 15px;
+                  display: block;
+                  letter-spacing: 1px;
+                  background-image: linear-gradient(to top, #e93f33, #ea4b32, #eb5632, #ec6032, #ec6a33);
+                }
+                
+                .box-div {
+                  border: 1px #bfbfbf solid;
+                  margin: 10px 0 25px 0;
+                  padding: 24px;
+                  width: 100%;
+                  -webkit-box-shadow: -8px 9px 5px -8px rgba(0, 0, 0, .75);
+                  -moz-box-shadow: -8px 9px 5px -8px rgba(0, 0, 0, .75);
+                  box-shadow: -8px 9px 5px -8px rgba(0, 0, 0, .75)
+                }
+                
+                .box-div .course-title {
+                  font-weight: 600;
+                  font-size: 1em;
+                  letter-spacing: 1px;
+                  display: block
+                }
+                
+                .box-div .fa-star {
+                  font-size: 15px;
+                  color: #f5af12;
+                  margin-right: 4px
+                }
+                
+                .box-div .price-box {
+                  text-align: -webkit-center
+                }
+                
+                @media (min-device-width:320px) and (max-device-width:520px) {
+                  .box-div .banr-image {
+                    display: none
+                  }
+                  .box-div .price-box {
+                    text-align: -webkit-left
+                  }
+                }
+                
+                @media (min-device-width:320px) and (max-device-width:767px) {
+                  .sale-bf {
+                    position: absolute;
+                    width: 80px;
+                    margin-top: -5.4em;
+                    right: 0em
+                  }
+                }
+                
+                .box-div .othr-cour {
+                  border-radius: 4px;
+                  border: solid 1px #4a4a4a;
+                  margin-right: 12px;
+                  padding: 5px 10px;
+                  font-size: 14px;
+                  font-weight: 400;
+                  display: inline-block;
+                  margin-bottom: 5px;
+                  cursor: pointer;
+                  line-height: 1.4
+                }
+                
+                .box-div .rel-cour {
+                  font-size: 16px;
+                  padding-bottom: 5px
+                }
+                
+                @media (min-device-width:768px) {
+                  .centertext {
+                    text-align: center
+                  }
+                  .sale-bf {
+                    position: absolute;
+                    width: 120px;
+                    margin-top: -6.1em;
+                    right: 2.5em
+                  }
+                }
+                
+                .blg-price {
+                  font-size: 1.5em
+                }
+                
+                .blg-str-price strike {
+                  font-size: 1.2em;
+                  color: grey
+                }
+                
+                .box-div hr {
+                  margin: 0 0 .5em;
+                  padding: .5em 0 0
+                }
+                
+                .box-div .course-title {
+                  line-height: 25px
+                }
+                
+                .box-div .banr-image {
+                  text-align: center;
+                  margin-top: 20px
+                }
+                
+                .box-div .bundle_link {
+                  text-decoration: none;
+                  color: #000;
+                  border: 0
+                }
+                
+                .box-div .bullets {
+                  font-weight: 400;
+                  font-size: .8em
+                }
+                
+                #banner_1 .three-sixths {
+                  margin-top: 15px
+                }
+                
+                #banner_1 .five-sixths {
+                  width: 100%;
+                  margin: 0
+                }
+                
+                #banner_1 .course-price {
+                  font-size: 1em
+                }
+                </style>
+                <div style="clear: both;"></div>
+              </div>
+              <p><strong>Static</strong>: It will place the element according to the flow of the document. It uses the default position; if we want to remove any position, then we can use a static position to replace it.</p>
+              <p><strong>Fixed</strong>: It will place the element relative to the browser window or viewport as viewport doesn’t change when scrolling. So element will be fixed at that position.</p>
+              <h4>Q3. What is a responsive website?</h4>
+              <p><strong>Answer:</strong>
+                <br> Any website is meant to be responsive when it looks good and fits in all types of screen resolution device types. In order to re-arrange the elements, display or hide the elements from the user interface, we can use CSS media queries to get things done.</p>
+              <h4>Q4. What is the difference between inline, block and inline-block?</h4>
+              <p><strong>Answer:</strong>
+                <br> <strong>Inline:</strong> In this thing, elements will follow the flow without breaking. Margin/padding will push other elements horizontally, not vertically, and inline elements ignore height and width.</p>
+              <p><strong>Block:</strong> It breaks the line and doesn’t fit in the line. It usually has div, p, text, section etc.</p>
+              <p><strong>Inline-block:</strong> It is similar to the inline element and follows the page flow. The only difference is that it will consider height and width.</p>
+              <h4>Q5. Does HTML need a compiler?</h4>
+              <p><strong>Answer:</strong>
+                <br> In general, HTML, <a href="https://www.educba.com/css-vs-javascript/">CSS, and JavaScript</a> have interpreted languages or browser interpreted technologies. In contrast, C, C++, asp.net, PHP have not interpreted languages, and they require a compiler that will convert their code into machine language. So HTML doesn’t need a compiler, and it is called a front-end language.</p>
+                <hr>
+              <h3>Part 2 – UI Developer Interview Questions (Advanced)</h3>
+              <p>Let us now have a look at the advanced Interview Questions.</p>
+              <h4>Q6. What is the difference between window and document?</h4>
+              <p><strong>Answer:</strong>
+                <br> JavaScript uses a global object, and everything runs under it, which is called a window and a global object, which holds global variables, global functions, history and location under it. Along with it, Ajax, setTimeout, console and local storage are also under the window.</p>
+              <p>A document is also under the window as it is a property of the window object. The document represents the DOM represented in object-oriented representation for the HTML markup that the user has written and can get elements by getElementById, addEventListener on the document.</p>
+              <h4>Q7. What is the difference between reset.css and normalize CSS?</h4>
+              <p><strong>Answer:</strong>
+                <br> The difference between reset.css and normalize CSS is that reset.css removes all the built-in browser styling capabilities like margin, padding, and border. Whereas normalize CSS provides a book-like appearance that includes a bold family to represent characters, a border between two paragraphs and a common font-family for an entire page of the document.</p>
+              <h4>Q8. What is web accessibility?</h4>
+              <p><strong>Answer:</strong>
+                <br> Web accessibility is defined as providing access to the website for differently-abled or disabled people. Recently <a href="https://www.educba.com/html5-interview-questions/">HTML5 introduced</a> WAI-ARIA using which even differently-abled and disabled people can able to use the web, navigate, understand and interact with it.</p>
+              <h4>Q9. What is JavaScript hoisting?</h4>
+              <p><strong>Answer:</strong>
+                <br> This is the most asked UI Developer Interview Questions in an interview. In JavaScript, we need to declare the variables then only we able to access the variables. If a variable is defined at the bottom of the script but called before then, JavaScript throws variable is undefined. In JavaScript, only assigned variables are hoisted like string, numbers etc., undefined variables and functions are not hoisted as they need to define before calling.</p>
+              <h4>Q10. Explain what is event bubbling and event capturing?</h4>
+              <p><strong>Answer:</strong>
+                <br> Event propagation is the order of events that fire on the element. Bubbling is when an event is fired on the element then bubble up the DOM tree, i.e. child will call first, and then parent node will call, whereas capturing is opposite to the bubbling where the parent node is called first and then child node.</p>
+              <p>I hope you have prepared well for your interview, and I will assure you after reading this UI Developer Interview Questions article, you will have a better understanding of topics and preparation for the UI developer Interview. I wish you all the very best for your Interview preparation and Interview.</p>
+              <!-- AI CONTENT END 1 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // [routerLink] vs routerLink
+      // ngModel vs [ngModel] vs [(ngModel)]
+
+      for(var i=1; i<2;i++){
+        setTimeout(function(){
+          console.log("settime Out loop =",i);
+        },2000);
+      }
+
+    //   for (var i = 0; i < 5; i++) {
+    //   (function (i) {
+    //     setTimeout(function () {
+    //       console.log(i);
+    //     }, 1000*i);
+    //   })(i);
+    // };
+
+    // for(var i=1; i<=5;i++){
+    //   (function(i){
+    //     setTimeout(function(){
+    //       console.log(i);
+    //     },1000 * i);
+    //   })(i)
+    // }
+
+    function jojo(){
+      return {
+        test:1,
+        name: "Rakesh",
+        lastName: "Shah"
+      }
+    }
+
+    console.log("jojo=", typeof(jojo)); 
+    console.log("jojo()=", typeof(jojo()));
+
+    //jojo();
+    //console.log("jojo=", typeof(jojo)); // This will print the Function name only
+    //console.log("jojo()=", typeof(jojo())); // This will print the object inside function we have object which is returning
+
+    console.log(1+2+"3"+5+4); // 3354
+    console.log(1+2+"3"+5-1); // 334
+    
+    console.log(1+2+"3"+5+4); 
+    console.log(1+2+"3"+5-1);
+
+    Banaras();
+    function Banaras(){
+      console.log("Banaras The Holy City of Hindusim");
+    }
+
+    Singrauli();
+    let Singrauli = function(){
+      console.log("Singrauli - The Coal India");
+    }
+    chennai();
+
+    function abc(a,b){
+      console.log("Result = " + a + b);
+      console.log("result = ", a + b);
+    }
+    abc(5,6);
+
+   console.log("55 == '55'", 55 == "55");
+   console.log("55 === '55'", 55 === "55");
+
+   x = 5;
+   var x;
+   function xyz(){
+    console.log("First X = ", x);
+    console.log("First Y = ", y);
+    y = 10;
+    var y;
+    console.log("Second Y = ", y);
+   }
+
+   xyz();
+   console.log("Second X = ", x);
+
+    let country = "India";
+    //let country = "Hongkong";
+    country = "Spain";
+    console.log("country = ", country);
+
+    const WWF = ["Undertaker","Triple H"];
+    WWF = ["Undertaker","Triple H","ROCK"]; 
+    console.log("WWE = ", WWF);
+    // We can not reassign the this array value since this is created by using const keyword
+    
+    // So we can perform all Array manipulation properties//
+    WWF.push("HBK");
+    console.log("WWE = ", WWF);
+    WWF.pop();
+    console.log("WWE = ", WWF);
+    WWF.shift();
+    console.log("WWE = ", WWF);
+    WWF.unshift("Edge");
+    console.log("WWE = ", WWF);
+    </script>
+  </body>
+</html>

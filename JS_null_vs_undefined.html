@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Null Vs Undefined</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is the difference between null & undefined?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                Actually, null & undefined both are representing the empty values But the difference is that - When you declaring the variable and not assigning the any value so it will automatically behave like undefined.
+              </p>
+
+              <p class="text-danger">But for the null values you need to assign specific null value then it will become null type of variable </p>
+
+              <ul>
+                <li>when you trying execute type of undefined then it will print undefined</li>
+                <li>But while executing the type of null it will print Object</li>
+              </ul>
+
+              <p>
+                <img src="images/null_vs_undefined_1.png" class="imng-fluid" alt="">
+              </p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      var x;
+      console.log("what is the data type of X", x);
+      var y = null;
+      console.log("what is the data type of Y", y);
+
+      console.log("type of undefined =", typeof(undefined));
+      console.log("type of null =", typeof(null));
+
+      console.log("null == undefined ", null == undefined);
+      console.log("null === undefined ", null === undefined);
+    </script>
+  </body>
+</html>

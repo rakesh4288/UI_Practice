@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2>IndexOf()</h2>
+            <p>The indexOf() method returns the position of the first occurrence of a specified value in a string.</p>
+            <p>This method returns -1 if the value to search for never occurs.</p>
+
+            <p>
+              <b>Note:</b> The indexOf() method is case sensitive.
+            </p>
+            <p>
+              <img src="images/indexof.png" class="img-fluid" alt="">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      var str = "Raka";
+      console.log('str =', str);
+      var indexOfVar = str.indexOf("a");
+      console.log('indexOf =', indexOfVar);
+    </script>
+  </body>
+</html>

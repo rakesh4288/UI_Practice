@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swapping</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2 class="text-danger"> 
+              function expression can not be hoisted which is created by Let & Var keyword !!
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Swapping values using third variable
+      var a = 10;
+      var b = 20;
+      var temp = 0;
+      console.log("The current Value of A =", a);
+      console.log("The current Value of B =", b);
+      temp = a; // temp:10
+      a = b; //a:20
+      b = temp; // b:10
+      console.log("And now after swapping The current Value of A =", a);
+      console.log("And now after swapping The current The Value of B =", b);
+
+      //*******************************************************************//
+
+      // Swapping values without using third variable
+      var x = 30;
+      var y = 40;
+      console.log("The current Value of X =", x);
+      console.log("The current Value of Y =", y);
+      x = x+y; // 30+40 = 70
+      y = x-y; // 70-40 = 30
+      x = x-y; // 70-30 = 40
+      console.log("And now after swapping The current Value of X =", x);
+      console.log("And now after swapping The current The Value of Y =", y);
+    </script>
+  </body>
+</html>

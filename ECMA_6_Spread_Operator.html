@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spread operator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-info">
+            <h3>What is Spread operator in ES6 ?</h3>
+            <p>Actually ECMAScript 6 introduced the spread operator. <br>
+              The syntax is three dots(...) and followed by the iterable array. <br>
+            </p>
+
+            <p>
+              It is expanding the array into individual elements. So, it can be used to expand the array in a places where zero or more elements are expected.
+            </p>
+
+            <ul>
+              <li>Spread operator ... is assocated with array which iterarting.</li>
+              <li>While using ...variableName our array can become the single line.</li>
+              <li>Spread operator can merge the array value and its spread the array data from array </li>
+              <li>When we need to merge two array values then we can use the spread operator</li>
+              <li>And also when we need to merge two array value then we can use the spread operator.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Example 1
+      var line1= ['Hello Sir!', 'Welcome', 'to', 'Rajvika', 'House !'];
+      var line2 = ["Your Booking", "is", "confirmed", "for", "marriage function"];
+      console.log(...line1);
+      console.log(...line2);
+
+      var line3 = [...line1, ...line2,'Please','share', 'our', 'Booking number'];
+      console.log(...line3);
+
+      // Example 2
+      function user(name,city){
+        console.log("Hey Hi My name is " + name + " and i am living in " + city);
+      }
+      var arg = ["Rakesh","Pune"];
+      //user("Rakesh","Pune");
+      user(...arg);
+
+      /*************************************************/
+      var city = ["Pune","Bhopal","Bangalore","Chennai","Hyderabad"];
+      console.log(...city); // It will spread this variable separately
+      console.log([...city]);
+    </script>
+  </body>
+</html>

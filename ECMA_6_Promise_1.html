@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript Promise</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is Promises in JavaScript?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                Promises is a new concept in JavaScript. Promise is an object that may produce two states condition:
+                <ul>
+                  <li>Either Resolve or</li>
+                  <li>Either Reject</li>
+                </ul>
+              </p>
+
+              <p>
+                While executing a promise sometimes it is possible to network failure Or may be huge traffic on internet so it will wait for the server response. Because Promise is very eager it will definitely be executed weather it will success or failed.
+              </p>
+
+              <p>
+                We can handle the resolve and reject status by using then and catch block. Yes, Promise providing the two method for handing the upcoming response.
+              </p>
+			  
+			  <p class="text-danger">
+                We can use promise - when we have to perform some set of action and after that it will execute some or produce some result. And Promise is very eager it will definitely be executed whether the result will success or failed.
+				After we can map the execution flow using .then() and .catch() callback function.
+              </p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      let myPromise = new Promise(function(resolve,reject){
+        let status = true;
+        if(status){
+          resolve("Yes, Everything is fine");
+        } else {
+          reject("No, Everything is Not fine");
+        }
+      });
+
+      myPromise.then(function(fromResolve){
+        console.log(fromResolve);
+      }).catch(function(fromReject){
+        console.log(fromReject);
+      });
+
+      console.log("1");
+      setTimeout(function(){
+        console.log("2");
+      },3000);
+
+      setTimeout(function(){
+        console.log("4");
+      },0);
+      console.log("3");
+      
+    </script>
+  </body>
+</html>

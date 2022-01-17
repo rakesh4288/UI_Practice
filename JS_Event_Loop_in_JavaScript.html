@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Loop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-primary">
+            <h2>What is Event Loop ?</h2>
+            <p>
+              Actually Event loop is something which is handling the asynchronous code execution in JavaScript.
+            </p>
+
+            <p>
+              As you know the Javascript is single thread language, which means the two statement can not be executed in parallely And JavaScript is executing our code line by line which means each javascript statements are synchronous. But there is a way to run your code asynchronously, if you use setTimeout() function which makes sure that your code executes after specified time (in millisecond). Example code:
+            </p>
+
+            <p>
+              <img src="images/event_loop_1.PNG" class="img-fluid" alt="">
+            </p>
+
+            <p class="text-success">
+              After executing above statements, Your browser will print “Message 1” & “Message 3” first, then it will print “Message 2”. This is where event loop comes into the picture, which makes sure your asynchronous code runs after all the synchronous code is done executing.
+            </p>
+
+            <h4>Actually after executing all synchronous code it is responsibility from Event Loop to execute the all asynchronous code. Actually when you create a asynchronous code then Event Loop job start to handle this.</h4>
+            
+            <a href="https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd" class="btn btn-info">Tutorial</a>
+
+            <h2> <b>Promise:</b> <br>
+              All `thenable` callbacks of the promise are called first, then the setTimeout callback is called.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      console.log("Delhi");
+      setTimeout(function(){
+        console.log("Chennai");
+      },1000);
+      console.log("Bhopal");
+    </script>
+  </body>
+</html>

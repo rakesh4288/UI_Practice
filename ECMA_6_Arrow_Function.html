@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrow Function</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2>Arrow Function</h2>
+            <p>One of the most interesting features in modern JavaScript is the introduction of arrow functions, sometimes called 'fat arrow' functions, utilizing the new token <code>=&gt;</code>.</p>
+            <p>This functions have two major benefits - one is a very clean & concise syntax and another one is more intuitive scoping and <code>this</code> binding.</p>
+
+            <p class="text-danger">This is very similar to traditional functions, we just leave off the function keyword and add a fat arrow after the arguments.</p>
+
+            <div> <img src="images/arrow_function_1.png" class="img-fluid" alt=""> </div>
+
+            <a class="btn btn-info" href="https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html" target="_blank"> Tutorial </a>
+
+            <hr>
+            <div class="bg-dark alert text-warning">
+              <h2>Difference between Arrow function and Regular Function :</h2>
+              <h4>We can create Regular functions in two ways:
+                <ul>
+                  <li>one is - using Function Declarations</li>
+                  <li>And another one is -  Function Expresssion</li>
+                </ul> 
+                  And Actually Regular function can be constructible and callable. Since regular functions are constructible, So they can be called using the new keyword.
+                <p>
+                  However, the arrow functions are only <b>callable</b> and not <b>constructible</b>, 
+                  i.e arrow functions can never be used as constructor functions.
+                </p>  
+              </h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      //Traditional Function
+      function abc(x){
+        console.log("This is Traditional Function = ", x);
+      }
+
+      abc("yes");
+      console.log("abc type of =", typeof(abc));
+
+      /*************************************************/
+      // Using Arrow Function
+      var xyz = a=>{
+        console.log("Using Arrow Function =",a);
+      }
+
+      xyz("correct");
+      console.log("xyz type of =", typeof(xyz));
+
+      /*************************************************/
+      // Using multiple parameters with Arrow Function
+
+      var wwe = (a,b,c,d)=>{
+        console.log("WWE - Tag Team Match =" + a,b + " vs " + c,d);
+      }
+      
+      wwe("Triple H","John Ceena","Batista","Edge");
+
+      /*************************************************/
+      //Simple Function Expression
+      let welcome  = function(pName){
+        console.log(`Hello & welcome ${pName} !`);
+      }
+      welcome("Rakesh ji");
+
+      // same above function with arrow function
+      let welcome2 = (pName,pAge) =>{
+        console.log(`Hello & welcome ${pName} ji ! What is your current age is = ${pAge}`);
+      }
+      welcome2("Lalita","32");
+    </script>
+  </body>
+</html>

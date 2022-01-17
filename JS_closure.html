@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Closure</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is the Closure in JavaScript?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+                JavaScript Closure is nothing but just mechanism or approach  which can be used for accessing a private member or information from another function.
+                <p class="text-danger">We can understand by its meaning – It is helping to get private data of any function.</p>
+
+                <p>
+					        Basically it comes with selected index value. see below screenshot.
+				      </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      // this is Traditional Function
+      function person(name){
+        this.name = name;
+      }
+
+      let me = new person("Rakesh");
+      console.log(me); // this will print the object
+      console.log(me.name); // this will print "Rakesh" Because we passed the parameter
+
+      // Now see the another example
+      function chicku(pName){
+        var _name = pName;
+      }
+
+     let you = new chicku("Lalita");
+     console.log(you); // this will show the blank object Because there is no any public properties available in this function
+     console.log(you._name); // this will print the Undefined Because _name is the private data member
+
+     // Now let's see the below example
+     function marriage(groom, bride){
+        var bride = bride;
+        var groom = groom;
+        this.getCouple = function(){
+          return groom + " Weds " + bride;
+        }
+     }
+     let sadi = new marriage("Rakesh","Lalita");
+     console.log(sadi.getCouple());
+
+     /**************************************/
+
+    for(var i=0; i<=5; i++){
+      (function(i){
+        setTimeout(function(){
+        console.log(i);
+      },2000*i);
+      })(i);
+    }
+    </script>
+  </body>
+</html>

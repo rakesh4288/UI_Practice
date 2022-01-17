@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Promises</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-danger">
+            <h1>Promises in JavaScript</h1>
+            <h5>When we have perform some set of action in JavaScript. It may be some calculation or some set of code or modules that would be execute in some time.</h5>
+            <h5 class="text-success">So in this scenario we can use the JavaScript Promises. Because it will definitely execute and provide two state: Either it will come up with the Resolve Success method or oit maby chance to get Failed</h5>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <p>
+                  <img src="images/promise_1.png" class="img-fluid" alt="">
+                </p>
+              </div>
+
+              <div class="col-md-8">
+                <h6>When we will the status of Promises so we can handle this situation by then() and catch()block</h6>
+                <h6 class="text-danger"><b>then():</b> When you will receive the success from Promise execution then you can handle into then() block and you can call some another function to execute</h6>
+
+                <h6 class="text-danger"><b>catch():</b> similarly this will also follow for reject status after promise exection.</h6>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <img src="images/promise_2.png" class="img-fluid" alt="">
+                </p>
+              </div>
+
+              <div class="col-md-6">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Example 1
+      function ExampPromise(math,english,science,hindi,sanskrit){
+        return new Promise(function(resolve,reject){
+          console.log("We are calculating. Please wait...");
+          let total = math + english + science + hindi + sanskrit;
+          let result = total/5;
+          //console.log("result = ", result);
+          setTimeout(function(){
+            if(result>=60){
+              resolve(`Exam = Passed with ${result} percentages`);
+            } else {
+              reject(`Exam = Failed with ${result} with percentages`);
+            }
+          },2000);
+        });
+      }
+
+      function examPassed(result){
+        console.log(result);
+        //document.write(result);
+      }
+
+      let examFailed = (error)=>{
+        console.log(error);
+      }
+
+      ExampPromise(88,65,98,55,65).then(examPassed).catch(examFailed);
+      /*************************************************/
+      
+
+    </script>
+  </body>
+</html>

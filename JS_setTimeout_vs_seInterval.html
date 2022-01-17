@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>setTimeout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-info">
+            <h2>setTimeout vs seInterval</h2>
+              <p>
+                The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds. <br>Tip: 1000 ms = 1 second. Tip: The function is only executed once.
+              </p>
+
+              <p>
+                If you need to repeat execution, use the setInterval() method. Tip: Use the clearTimeout() method to prevent the function from running.
+              </p>
+              
+              <h4 class="text-info">When we add a setTimeout function in a JavaScript then JavaScript execution control take place into Asynchronous mode flow and it will executed while certain time.</h4>
+              
+              <p>
+                <img src="images/setTimeout_vs_setInterval.png" class="img-fluid" />
+              </p>
+              
+              <hr>
+              
+              <p>
+                <img src="images/setTimeout_vs_setInterval_2.png" class="img-fluid" />
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		console.log("A");
+		console.log("C");
+		
+		setTimeout(function(){
+			console.log("B");
+		},0);
+	</script>
+  </body>
+</html>

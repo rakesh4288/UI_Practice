@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Symbols</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h1>JavaScript Symbols</h1>
+            <h5>A JavaScript Symbol is a primitive datatype just like Number, String, Boolean, Object etc.</h5>
+            <h5>It represent the unique value that no other code can accidentally access.</h5>
+            <h5 class="text-success">So basically when you want to provide some unique value in the application then we can use the Symbols</h5>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <img src="images/symbols_1.png" class="img-fluid" alt="">
+                </p>
+              </div>
+
+              <div class="col-md-6">
+                <p>
+                  <img src="images/symbols_2.png" class="img-fluid" alt="">
+                </p>
+              </div>
+            </div>
+
+            <h5 class="text-danger alert alert-success">This is the case sensitive. You need to use S capital letter while initializing the Symbol data type.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      let id = Symbol("Hello");
+      console.log("id=",id);
+      console.log("typeof(id) = ", typeof(id));
+      // if you want to compare two symbols. check below
+      let data = Symbol("Hello");
+      console.log(id == data); // False: Becuase two unique value can not be matched !!
+
+      //alert(data); // Cannot convert a Symbol value to a string
+      //alert(data.toString()); // Output = Symbol(Hello);
+      // If you want to show only value of symbol then you need to use the Description
+      //alert(data.description);
+
+      /*************************************************/
+      var str1 = "Hello";
+      var str2 = "Hello";
+      console.log(str1 == str2);
+
+      /*************************************************/
+      
+      // How to use Symbol in Object
+      let age = Symbol("Age");
+      let mobile = Symbol("Mobile");
+      let user = {
+        name:'Rakesh Shah',
+        city: 'Pune',
+        [age]: 25
+      }
+      // Another way to inject Symbol into Object
+      user[mobile] = 9762462383;
+      console.log(user);
+      console.log(user.age); // we can not use age Symbol property like this. result will be Undefined
+      console.log(user[age]);
+
+      // Acgtually in General Behaviour we are using object.propertyName But in case of Symbol data type we will use the object[propertyName]
+
+      /*************************************************/
+
+      let employeeData = {
+        id: 88787,
+        name: 'Rakesh Shah',
+        address: 'Pune',
+        gender: 'Male',
+        age: 33
+      }
+
+      // for (var key in employeeData){
+      //   console.log(key,employeeData[value]);
+      // }
+
+      let empObj = Object.entries(employeeData); 
+      for(var [key,value] of empObj){
+        console.log(key + " : " + value);
+      }
+
+    </script>
+  </body>
+</html>

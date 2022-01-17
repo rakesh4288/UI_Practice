@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Class inheritance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Class inheritance</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                <img src="images/class_3.png" class="img-fluid" alt="">
+              </p>
+            </div>
+
+            <div class="col-md-6">
+              <div class="alert alert-primary">
+                <h4>using extends keyword we can inherit the class. I mean we can create the derived class</h4>
+              </div>
+
+              <p>
+                <img src="images/class_4.png" height="200" alt="">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      class employee{
+        constructor(pName,city){
+          this.empName = pName;
+          this.empCity = city;
+          //console.log("This is the constructor function !!");
+          console.log("Employee Name = ", pName);
+        }
+
+        info(){
+          console.log(`Employee Name is ${this.empName} and address is ${this.empCity}`);
+        }
+      }
+
+     let a = new employee();
+
+     /*************************************************/
+      // Lets inherit the class using extends keyword and we will not use any methods and it will call default constructor method
+
+      class manager extends employee{
+
+      }
+
+      let b = new manager("Rakesh Shah","Pune");
+      // Now you can see in manager class and it has inherited the all properties and methods of employee
+      // Now you can call the info method
+      b.info();
+
+      /*************************************************/
+
+      class employeeClass{
+        constructor(name,age,salary,city){
+          this.empName = name;
+          this.empAge = age;
+          this.empSalary = salary;
+          this.empCity = city;
+        }
+
+        getEmpInfo(){
+          document.write(`
+            <h6>Employee Data: </h6>
+            Name: ${this.empName} <br>
+            Age: ${this.empAge} <br>
+            Salary: ${this.empSalary} <br>
+            Address: ${this.empCity}
+            <hr>
+          `);
+        }
+      }
+
+      let employeeObject = new employeeClass("Lalita Sahu",32, 25000,"Mumbai, India");
+      employeeObject.getEmpInfo();
+
+      class managerClass extends employeeClass{
+        getEmpInfo(){
+          let DA = 2000;
+          let PA = 1000;
+          let totalSalary = this.empSalary + DA + PA;
+          document.write(`
+            <h6>Manager Data: </h6>
+            Name: ${this.empName} <br>
+            Age: ${this.empAge} <br>
+            Salary: ${totalSalary} <br>
+            Address: ${this.empCity}
+            <hr>
+          `);
+      }
+    }
+
+      let managerObject = new managerClass("Rakesh Shah",33,45000,"Berlin, Germany");
+      managerObject.getEmpInfo();
+    </script>
+  </body>
+</html>

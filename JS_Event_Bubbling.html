@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Bubbling</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"> 
+          <div class="alert alert-info">
+            <div id="grandPapa" class="text-center" style="width:400px; height:400px; border:2px solid red;padding:20px;cursor:pointer;">
+              Grand Father
+              
+              <div id="parent" class="text-center" style="width:250px; height:250px; border:2px solid red;padding:20px;cursor:pointer;"> Parent 
+                <div id="child" class="text-center" style="width:125px; height:125px; border:2px solid red;padding:20px;cursor:pointer;"> Child </div>
+              </div>
+            </div>
+          </div>
+
+          <h2>Event Bubbling</h2>
+          <p>Event Bubbling − Whenever an event triggered on an element then the event handlers will first run on that element and it will execute the parent element and finally it will goes all the way up to its other ancestors.</p>
+          
+          <p>With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#child').click(function(){
+          alert("Child is clicked");
+        });
+
+        $("#parent").click(function(){
+          alert('Parent is clicked');
+        });
+
+        $("#grandPapa").click(function(){
+          alert("Grand Papa is fired Now");
+        });
+
+      });
+    </script>
+  </body>
+</html>

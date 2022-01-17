@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript Lexical Scoping</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                What is Lexical Scoping in JavaScript?
+              </h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                First thing JavaScript has lexical scoping with function scope. In other words, even though JavaScript looks like it should have block level scope because it uses curly braces { }, a new scope is created only when you create a new function.
+              </p>
+
+              <p> <img src="images/lexical_scoping.png" class="img-responsive" alt=""> </p>
+
+              <p>
+                In this example, the variable x is available everywhere inside of outerFunction(). Also, the variable y is available everywhere within the nestedFunction(), but neither are available outside of the function where they were defined. The reason for this can be explained by lexical scoping. The scope of variables is defined by their position in source code. In order to resolve variables, JavaScript starts at the innermost scope and searches outwards until it finds the variable it was looking for.
+              </p>
+
+              <p>
+                Lexical scoping is nice, because we can easily figure out what the value of a variable will be by looking at the code; whereas in dynamic scoping, the meaning of a variable can change at runtime, making it more difficult.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      function OuterFunction(){
+        if(true){
+          var x = 5;
+          console.log("from Outer Function the value of X =", x);
+          //console.log('from inner function the value of Y =', y); // this will give Reference Error
+        }
+        var innerFunction = function(){
+          console.log("from Inner Function the value of X =", x);
+          if(true){
+            var y = 7;
+            console.log('from inner function the value of Y =', y);
+          }
+        }
+        innerFunction();
+      }
+      OuterFunction();
+    </script>
+  </body>
+</html>

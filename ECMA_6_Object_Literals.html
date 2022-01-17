@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h1>Object Literals</h1>
+            <h3>
+              A JavaScript object literal is a comma-separated list of name-value pairs wrapped in curly braces. Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global variables which can cause problems when combining code</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      let name = "Rakesh";
+      let city = "Pune";
+      var obj = {
+        name:name,
+        city:city
+      }
+
+      // var obj = {
+      //   name,
+      //   city
+      // }
+      // If we use object key same as variable name then it will catch the variable same name and contruct the property and passed the value
+      console.log(obj);
+      
+      /*************************************************/
+      
+      // Object Literals: Use Variable as a Property Name
+      // We can fetch the Object property key using []
+      let n = "empName";
+      var ECMA_Object = {
+        [n] : "Rakesh Shah",
+        company  : "Infosys",
+        details: function(){
+          return `Hello Mr. ${this.empName} Welcome to ${this.company}`
+        }
+      }
+
+      console.log(ECMA_Object);
+      console.log(ECMA_Object.details());
+
+      /*************************************************/
+
+      // Object Literals: New Function Syntax
+      let tt = "empName";
+      var ECMA_Object_2 = {
+        [tt] : "Rajvika Sahu",
+        company  : "Appolo Hospital",
+        empDetails(){
+          return `Hello Mr. ${this.empName} Welcome to ${this.company}`
+        }
+      }
+
+      console.log(ECMA_Object_2);
+      console.log(ECMA_Object_2.empDetails());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Function Declaration vs Function Expression</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h3> Function Declaration vs Function Expression </h3>
+              <p>Function Declaration is the traditional approach where as Function Expression is the new approach to declare a function. Actually we assigning the variable to declare the function.</p>
+              
+              <p class="text-danger"> Function Declaration can be hoisted I mean you can call the function before it declaration But in case of Function Expression you can not make a hoisting.</p>
+
+              <p>
+                <img src="images/function_declaration_vs_function_expression.png" class="img-fluid" alt="">
+              </p>
+			
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		
+
+
+    abc();
+		function abc(){
+			console.log("Function Declaration");
+		}
+
+		xyz(); //TypeError: xyz is not a function
+		var xyz = function(){
+			console.log("Function Expression");
+		}
+
+
+
+
+
+
+	</script>
+  </body>
+</html>

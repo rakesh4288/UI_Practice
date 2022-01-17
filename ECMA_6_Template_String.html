@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2>ES6 Template Literals</h2>
+            <h4>Basically template string are using for concating two string dynamically and we are using backtick (` `) character with $ to operate them.</h4>
+            <p>
+              Before ES6, template literals were called as template strings. Unlike quotes in strings, template literals are enclosed by the backtick (` `) character (key below the ESC key in QWERTY keyboard). Template literals can contain placeholders, which are indicated by the dollar sign and curly braces ($(expression}). Inside the backticks, if we want to use an expression, then we can place that expression in the ($(expression}).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      var user = "Rajvika Sahu";
+      var company = "Infosys";
+      //var result = "Hello" + user + " Welcome to " + company; // this was before ES6 for concatenating
+      var result = `Hello ${user} Welcome to ${company}`;
+      console.log(result);
+    </script>
+  </body>
+</html>

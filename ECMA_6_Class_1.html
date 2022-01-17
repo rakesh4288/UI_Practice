@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Class</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert border-success">
+            <h2>Class</h2>
+            <h6>JavaScript is a very flexible object-oriented language when it comes to syntax. In this article you can find three ways of defining and instantiating an object. Even if you have already picked your favorite way of doing it, it helps to know some alternatives in order to read other people's code.</h6>
+
+            <h5>Using a function</h5>
+            <p>This is probably one of the most common ways. You define a normal JavaScript function and then create an object by using the <code>new</code> keyword. To define properties and methods for an object created using <code>function()</code>, you use the <code>this</code> keyword, as seen in the following example.</p>
+            <div class="hl-main">
+              <pre><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">Apple</span><span class="hl-code"> </span><span class="hl-brackets">(</span><span class="hl-identifier">type</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+                  </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">type</span><span class="hl-code"> = </span><span class="hl-identifier">type</span><span class="hl-code">;
+                  </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">color</span><span class="hl-code"> = </span><span class="hl-quotes">"</span><span class="hl-string">red</span><span class="hl-quotes">"</span><span class="hl-code">;
+                  </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">getInfo</span><span class="hl-code"> = </span><span class="hl-identifier">getAppleInfo</span><span class="hl-code">;
+              </span><span class="hl-brackets">}</span><span class="hl-code">
+               
+              </span><span class="hl-comment">//</span><span class="hl-comment"> anti-pattern! keep reading...</span><span class="hl-comment"></span><span class="hl-code">
+              </span><span class="hl-reserved">function</span><span class="hl-code"> </span><span class="hl-identifier">getAppleInfo</span><span class="hl-brackets">(</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+                  </span><span class="hl-reserved">return</span><span class="hl-code"> </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">color</span><span class="hl-code"> + </span><span class="hl-quotes">'</span><span class="hl-string"> </span><span class="hl-quotes">'</span><span class="hl-code"> + </span><span class="hl-reserved">this</span><span class="hl-code">.</span><span class="hl-identifier">type</span><span class="hl-code"> + </span><span class="hl-quotes">'</span><span class="hl-string"> apple</span><span class="hl-quotes">'</span><span class="hl-code">;
+              </span><span class="hl-brackets">}</span></pre>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Initializing a function with a function expression
+      const x = function() {}
+
+      // Initializing a class with a class expression
+      const y = class {}
+      
+      //We can access the [[Prototype]] of an object using the Object.getPrototypeOf() method. Let's use that to test the empty function we created.
+      console.log("The value of X = ", Object.getPrototypeOf(x));
+    	console.log("The value of Y = ", Object.getPrototypeOf(y));
+      //The code declared with function and class both will return a function [[Prototype]]. With prototypes, any function can become a constructor instance using the new keyword.
+
+      //***************************************************************************************//
+
+      const xx = function(){}
+	    // Initialize a constructor from a function
+      const constructorFromFunction  = new xx();
+	    console.log("xx from Function = ",constructorFromFunction);
+      
+      //This applies to classes as well.
+      const yy = class{}
+      // Initialize a constructor from a class
+      const constructorFromClass = new yy();
+      console.log("YY from Class = ", constructorFromClass);
+
+      //***************************************************************************************//
+
+      // Full mode Class in Javascript
+      class company_1{
+        constructor(cName,cAddress){
+          this.cName = cName;
+          this.cAddress = cAddress;
+        }
+
+        firstCompanyDetails(){
+          return this.cName + " " + this.cAddress;
+        }
+      }
+
+     var company_1_data = new company_1("Cognizant","Hinjewadi Phase 1");
+     console.log(company_1_data.firstCompanyDetails());
+
+      // How to inherit class using extends keyword
+      class company_2 extends company_1{
+        constructor(cName,cAddress,cPhone){
+          super(cName,cAddress);
+          this.cPhone = cPhone;
+        }
+
+        secondCompanyDetails(){
+          return this.cName + " " + this.cAddress + " " + this.cPhone;
+        }
+      }
+
+      // Now lets create the object of second class using new keyword
+      var company_2_data = new company_2("Infosys","Hinjewadi Phase 2","9762 462 383");
+      console.log(company_2_data.secondCompanyDetails());
+      console.log(company_2_data.firstCompanyDetails());
+
+    </script>
+  </body>
+</html>
